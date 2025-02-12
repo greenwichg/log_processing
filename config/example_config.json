@@ -1,0 +1,28 @@
+{
+    "kafka": {
+      "bootstrap_servers": "kafka-broker1:9092,kafka-broker2:9092",
+      "topic": "log_topic",
+      "starting_offsets": "earliest",
+      "maxOffsetsPerTrigger": 10000
+    },
+    "s3": {
+      "checkpoint_location": "s3://your-bucket/checkpoints/",
+      "processed_data_path": "s3://your-bucket/processed-data/",
+      "raw_data_path": "s3://your-bucket/raw-landing-zone/"
+    },
+    "redshift": {
+      "url": "jdbc:redshift://your-redshift-cluster:5439/yourdb?user=youruser&password=yourpassword",
+      "dbtable": "your_schema.your_table",
+      "temp_dir": "s3://your-temp-bucket/redshift-temp/"
+    },
+    "glue": {
+      "job_name": "your_glue_job_name"
+    },
+    "lambda": {
+      "glue_job_name": "your_glue_job_name",
+      "checkpoint_table": "GlueJobCheckpoints",
+      "max_retries": 3,
+      "default_input_path": "s3://your-bucket/raw-landing-zone/"
+    }
+  }
+  

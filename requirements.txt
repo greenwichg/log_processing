@@ -1,0 +1,5 @@
+# PySpark for running Spark jobs locally (if needed)
+pyspark==3.1.2
+
+# Boto3 for AWS service interactions (S3, Glue, Lambda, DynamoDB, etc.)
+boto3==1.20.0
